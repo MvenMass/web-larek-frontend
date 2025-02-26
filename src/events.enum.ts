@@ -1,0 +1,23 @@
+// перечисление для всех событий
+export enum EventTypes {
+	ModalOpen = 'modal:open',
+	ModalClose = 'modal:close',
+	ItemsChanged = 'items:changed',
+	CardSelect = 'card:select',
+	PreviewChanged = 'preview:changed',
+	ProductAdd = 'product:add',
+	ProductDelete = 'product:delete',
+	ProductToggle = 'product:toggle',
+	BasketChanged = 'basket:changed',
+	CounterChanged = 'counter:changed',
+	OrderOpen = 'order:open',
+	BasketOpen = 'basket:open',
+	PaymentToggle = 'payment:toggle',
+	FormErrorsChange = 'formErrors:change',
+	OrderFieldChange = 'order:field:change',
+	ContactsFieldChange = 'contacts:field:change',
+	ContactReady = 'contact:ready',
+	OrderSubmit = 'order:submit',
+	ContactsSubmit = 'contacts:submit',
+	DeliveryReady = 'delivery:ready',
+}
