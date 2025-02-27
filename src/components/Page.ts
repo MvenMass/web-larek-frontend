@@ -26,9 +26,8 @@ export class Page extends View<IPage> {
 
 
     set counter(value: number) {
-        if (this._basketCounter) {
-            this._basketCounter.textContent = value > 0 ? String(value) : '0';
-        }
+        const counterValue = value > 0 ? String(value) : '0';
+        this.setTextContent(this._basketCounter, counterValue);
     }
 
     set catalog(items: HTMLElement[]) {

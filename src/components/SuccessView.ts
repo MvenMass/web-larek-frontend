@@ -29,8 +29,6 @@ export class Success extends View<ISuccess> {
     }
 
     set transactionDetails(value: string) {
-        if (this._description) {
-            this._description.textContent = `Списано ${value} синапсов`;
-        }
+        this.setTextContent(this._description, `Списано ${value} синапсов`);
     }
 }

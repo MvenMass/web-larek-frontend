@@ -46,9 +46,7 @@ export class Card extends View<ICard> {
     }
 
     set title(value: string) {
-        if (this._title) {
-            this._title.textContent = value;
-        }
+        this.setTextContent(this._title, value);
     }
 
     get title(): string {
@@ -56,9 +54,8 @@ export class Card extends View<ICard> {
     }
 
     set price(value: number | null) {
-        if (this._price) {
-            this._price.textContent = value !== null ? `${value} синапсов` : 'Бесценно';
-        }
+        const priceText = value !== null ? `${value} синапсов` : 'Бесценно';
+        this.setTextContent(this._price, priceText);
         this.disablePurchaseButton(value);
     }
 
@@ -67,12 +64,13 @@ export class Card extends View<ICard> {
     }
 
     set category(value: string) {
+        this.setTextContent(this._category, value);
+        
+        const baseClass = 'card__category';
+        const categoryClass = categoryClasses[value] || '';
+        
         if (this._category) {
-            this._category.textContent = value;
-            const className = categoryClasses[value];
-            if (className) {
-                this._category.classList.add(className);
-            }
+            this._category.className = `${baseClass} ${categoryClass}`.trim();
         }
     }
 
@@ -81,10 +79,8 @@ export class Card extends View<ICard> {
     }
 
     set index(value: string) {
-        if (this._index) {
-            this._index.textContent = value;
-        }
-    }
+    this.setTextContent(this._index, value);
+}
 
     get index(): string {
         return this._index?.textContent || '';
@@ -98,14 +94,10 @@ export class Card extends View<ICard> {
     }
 
     set description(value: string) {
-        if (this._description) {
-            this._description.textContent = value;
-        }
+        this.setTextContent(this._description, value);
     }
 
     set buttonTitle(value: string) {
-        if (this._button) {
-            this._button.textContent = value;
-        }
+        this.setTextContent(this._button, value);
     }
 }

@@ -44,8 +44,6 @@ export class Basket extends View<IBasketView> {
     }
 
     set totalPrice(total: number) {
-        if (this._total) {
-            this._total.textContent = `${total} синапсов`;
-        }
+        this.setTextContent(this._total, `${total} синапсов`);
     }
 }

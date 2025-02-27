@@ -50,9 +50,7 @@ export class Form<T> extends View<IFormStatus> {
     }
 
     set errors(errorMessage: string) {
-        if (this._errorContainer) {
-            this._errorContainer.textContent = errorMessage || '';
-        }
+        this.setTextContent(this._errorContainer, errorMessage || '');
     }
 
     render(state: Partial<T> & IFormStatus): HTMLFormElement {
